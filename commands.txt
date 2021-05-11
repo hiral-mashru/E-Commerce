@@ -1,0 +1,13 @@
+https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/
+
+npx create-react-app client
+cd client
+npm start
+
+npx express-generator api
+cd api
+npm install
+npm start
+
+npm install --save cors
+
