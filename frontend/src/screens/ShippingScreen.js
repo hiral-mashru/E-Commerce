@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import {useDispatch} from 'react-redux';
 import { saveShipping } from '../Actions';
 import CheckoutSteps from '../components/CheckoutSteps';
+import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
 
 function ShippingScreen(props){
 
@@ -11,10 +12,11 @@ function ShippingScreen(props){
     const [city,setCity] = useState('')
     const [postalcode,setPostalCode] = useState('')
     const [country,setCountry] = useState('')
+    const [region,setRegion] = useState('')
         
     const submitHandler = (e) =>{
         e.preventDefault();
-        dispatch(saveShipping({address,city,postalcode,country}))
+        dispatch(saveShipping({address,city,postalcode,region,country}))
         props.history.push('payment')
     }
     return (
@@ -47,11 +49,23 @@ function ShippingScreen(props){
                         <input type="text" name="postalcode" id="postalcode" onChange={(e)=>setPostalCode(e.target.value)} /> 
                     </li>
                     <li>
+                    <CountryDropdown
+                        className="dropdown1"
+                        name="country" id="country"
+                        value={country}
+                        onChange={(val) => setCountry(val)} required/><br></br>
+                    <RegionDropdown
+                        className="dropdown1"
+                        country={country}
+                        value={region}
+                        onChange={(val) => setRegion(val)} required/>
+                    </li>
+                    {/* <li>
                         <label htmlFor="country">
                             Country
                         </label>
                         <input type="text" name="country" id="country" onChange={(e)=>setCountry(e.target.value)} /> 
-                    </li>
+                    </li> */}
                     <li>
                         <button type="submit" className="button primary">Continue</button>
                     </li>

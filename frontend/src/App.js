@@ -50,7 +50,7 @@ function  App(props){
                 {/* <button  onClick={openMenu}>
                   &#9776;
               </button> */}
-              <a><Link class="navbar-caption text-black display-7" id="font" to="/">Shoppy</Link></a></span>
+              <a><Link class="navbar-caption text-black display-7" id="font" to="/">QuesteCom</Link></a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">

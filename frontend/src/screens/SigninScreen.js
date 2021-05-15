@@ -42,11 +42,11 @@ function SigninScreen(props){
                         <label htmlFor="email">
                             Email
                         </label>
-                        <input type="email" name="email" id="email" onChange={(e)=>setEmail(e.target.value)} /> 
+                        <input type="email" name="email" id="email" onChange={(e)=>setEmail(e.target.value)} required/> 
                     </li>
                     <li>
                         <label htmlFor="password"> Password </label>
-                        <input type="password" name="password" id="password" onChange={(e)=>setPassword(e.target.value)} />
+                        <input type="password" name="password" id="password" onChange={(e)=>setPassword(e.target.value)} required/>
                     </li>
                     <li>
                         <button type="submit" className="button primary">SignIn</button>

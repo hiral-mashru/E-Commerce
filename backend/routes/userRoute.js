@@ -34,7 +34,6 @@ router.post('/signin', async (req,res)=> {
         password: req.body.password
     })
     if(signinUser){
-        console.log("signin",User.find())
         res.send({
             _id: signinUser._id,
             name: signinUser.name,

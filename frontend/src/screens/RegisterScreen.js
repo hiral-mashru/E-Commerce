@@ -25,8 +25,21 @@ function RegisterScreen(props){
     }, [userInfo])
     
     const submitHandler = (e) =>{
+        console.log("mmmmmmm")
         e.preventDefault();
-        dispatch(register(name,email,password))
+        // if(password===repassword){
+            console.log("matched",password,repassword)
+            // const { value } = this.state;
+            // console.log("matched",value)
+            // const re = new RegExp("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$");
+            // const isOk = re.test(value);
+            // console.log(isOk);
+            // if(!isOk) {
+            //     return alert('weak password!');
+            // }
+            dispatch(register(name,email,password))
+        // }
+        console.log("not matching")
     }
     return (
     <div>
@@ -44,22 +57,22 @@ function RegisterScreen(props){
                         <label htmlFor="name">
                             Name
                         </label>
-                        <input type="text" name="name" id="name" onChange={(e)=>setName(e.target.value)} /> 
+                        <input type="text" name="name" id="name" onChange={(e)=>setName(e.target.value)} required/> 
                     </li>
                     <li>
                         <label htmlFor="email">
                             Email
                         </label>
-                        <input type="email" name="email" id="email" onChange={(e)=>setEmail(e.target.value)} /> 
+                        <input type="email" name="email" id="email" onChange={(e)=>setEmail(e.target.value)} required/> 
                     </li>
                     <li>
                         <label htmlFor="password"> Password </label>
-                        <input type="password" name="password" id="password" onChange={(e)=>setPassword(e.target.value)} />
+                        <input type="password" name="password" id="password" onChange={(e)=>setPassword(e.target.value)} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
                     </li>
-                    <li>
+                    {/* <li>
                         <label htmlFor="rePassword"> Password </label>
                         <input type="password" name="rePassword" id="rePassword" onChange={(e)=>setRepassword(e.target.value)} />
-                    </li>
+                    </li> */}
                     <li>
                         <button type="submit" className="button primary">Register</button>
                     </li>

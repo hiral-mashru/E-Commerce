@@ -92,7 +92,7 @@ function ProductScreen(props){
             <ul className="review" id="reviews">
             <div className="reviews"><br></br>
             <h2><center>Reviews</center></h2>
-            {!(product.reviews.length) ? <div><center>There is no review</center></div> : <div>
+            {!(product.reviews) ? <div><center>There is no review</center></div> : <div>
               {product.reviews.map((review) => (
                 <li key={review._id}>
                   <div className="reviewName">
@@ -140,7 +140,7 @@ function ProductScreen(props){
             <div ><br></br>
             {userInfo ? (
                   <form onSubmit={submitHandler}>
-                    <ul className="form-container"><br></br>
+                    <ul className="form-container2"><br></br>
                     <h2><center>Write a customer review</center></h2>
                       <li>
                         <label htmlFor="rating">Rating</label>
